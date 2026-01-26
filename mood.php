@@ -185,8 +185,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	if(array_key_exists("$selected_mood", $moods_quotes)){
 		$quotes = $moods_quotes[$selected_mood];
 		$quote_to_show=$quotes[array_rand($quotes)];
-
-		$stmt=$conn->prepare("INSERT INTO mood_log(user_id,mood,note,entry_date) VALUES(?,?,?,NOW())");
+        date_default_timezone_set('Asia/Kolkata');
+        $entry_date = date('Y-m-d H:i:s');
+		$stmt=$conn->prepare("INSERT INTO mood_log(user_id,mood,note,entry_date) VALUES(?,?,?,?)");
 		$stmt->bind_param("iss",  $user_id, $selected_mood, $note);
 		$stmt->execute();
 	}

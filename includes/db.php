@@ -1,8 +1,8 @@
 <?php
-$host='localhost';
-$db='mindmirror';
-$user='root';
-$password='';
+$host='sql109.infinityfree.com';
+$db='if0_39103359_mindmirror';
+$user='if0_39103359';
+$password='EwmPSdgTr43ss';
 
 $conn=new mysqli($host,$user,$password,$db);
 
