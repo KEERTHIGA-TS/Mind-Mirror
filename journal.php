@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Asia/Kolkata');
+
 session_start();
 include("includes/db.php");
 
@@ -12,8 +14,9 @@ $message="";
 if(isset($_POST['submit'])){
     $content=trim($_POST['content']);
     if($content!==""){
-        $stmt=$conn->prepare("INSERT INTO entries(user_id, content, entry_date) VALUES(?,?,NOW())");
-        $stmt->bind_param("is", $user_id, $content);
+        $entry_date=date('Y-m-d H:i:s');
+        $stmt=$conn->prepare("INSERT INTO entries(user_id, content, entry_date) VALUES(?,?,?)");
+        $stmt->bind_param("iss", $user_id, $content,$entry_date);
         $stmt->execute();
         $stmt->close();
         header("Location: journal.php");
@@ -27,8 +30,10 @@ if(isset($_POST['update'])){
     $id=$_POST['entry_id'];
     $updated=trim($_POST['updated_content']);
     if($updated!==""){
-        $stmt=$conn->prepare("UPDATE entries SET content=?, updated_at=NOW() WHERE id=? AND user_id=?");
-        $stmt->bind_param("sii", $updated, $id, $user_id);
+        
+        $update_date = date('Y-m-d H:i:s');
+        $stmt=$conn->prepare("UPDATE entries SET content=?, updated_at=? WHERE id=? AND user_id=?");
+        $stmt->bind_param("ssii", $updated, $update_date, $id, $user_id);
         $stmt->execute();
         $stmt->close();
         header("Location: journal.php");
@@ -79,6 +84,7 @@ $stmt->close();
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="images/mindmirror-logo.png">
     <title>Your Journal</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <style>
@@ -119,7 +125,7 @@ $stmt->close();
             color: #4E3D42;
             padding: 40px;
             border-radius: 20px;
-            width:52%;
+            width:45%;
             margin-top:25px;
             text-align:left;
             
@@ -235,19 +241,19 @@ $stmt->close();
             }
             input{
                 padding: 5px;
-                width: 60px;
+                width: 80px;
                 height: 11px;
-                font-size: 6px;
+                font-size: 8px;
                 margin-right: 3px;
             }
             textarea{
                 padding: 10px;
-                font-size: 6px;
+                font-size: 10px;
             }
             a,button{
                 font-size: 9px;
                 padding: 3px 5px;
-                border-radius: 2px;
+                border-radius: 3px;
                 margin:0;
             }
             .filter-journal-cont{
@@ -255,7 +261,7 @@ $stmt->close();
                 margin:auto;
             }
             .journal-form{
-                height: 130px;
+                height: 200px;
             }
             .entry{
                 border-radius: 10px;
@@ -263,14 +269,14 @@ $stmt->close();
                 padding: 16px;
             }
             .entry p{
-                font-size: 6px;
+                font-size: 10px;
             }
             .entry-time{
                 margin: 7px 0px;
-                font-size: 7px;
+                font-size: 9px;
             }
             .entry-time p{
-                font-size: 6px !important;
+                font-size: 8px !important;
             }
             .entry textarea{
                 width: 75% !important;
