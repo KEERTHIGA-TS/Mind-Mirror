@@ -32,6 +32,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Mirror - Login</title>
+    <link rel="icon" type="image/jpeg" href="images/mindmirror-logo.png">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 	<style>
 		body{
@@ -123,12 +125,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		}
 		@media screen and (max-width:426px) {
 			input{
-				width:130px;
+				width:160px;
 				height:10px;
 				border:none;
 				padding:10px;
 				border-radius: 5px;
-				font-size:9px;
+				font-size:11px;
 			}
 			input:focus{
 				outline:none;
@@ -140,10 +142,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				border-radius:5px;
 			}
 			p{
-				font-size:8px;
+				font-size:11px;
 			}
 			h2{
-				font-size:13px;
+				font-size:16px;
 			}
 			.login{
 				display:inline-block;
@@ -157,9 +159,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				text-decoration: none;
 				cursor: pointer;
 			}
-			div{
-				font-size: 10px;
-			}
+			
 		}
 		
 	</style>
