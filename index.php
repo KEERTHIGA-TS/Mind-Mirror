@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width initial-scale=1.0">
 	<title>Mind Mirror - Your Wellness Journal</title>
-	 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="images/mindmirror-logo.png">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 	<style>
 		body{
 			margin:0;
@@ -118,13 +119,13 @@
 				padding: 11px;
 			}
 			p{
-				font-size:7px;
+				font-size:11px;
 			}
 			.content{
 				padding: 50px;
 			}
 			.content p{
-				line-height: 10px;
+				line-height: 20px;
 			}
 			.features{
 				padding: 20px;
@@ -132,24 +133,24 @@
 			.features .row-1, .row-2{
 				display:grid;
 				grid-template-columns:repeat(3,1fr);
-				gap:25px;
+				gap:20px;
 				margin-top:4%;
 			}
 			.feature-card{
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				padding:10px;
+				padding:5px;
 				border-radius:20px;
 				box-shadow: 4px 4px 0.8px 0.1px rgb(253, 159, 133);
 			}
 			.feature-card h3{
-				font-size: 6px;
+				font-size: 12px;
+                margin-bottom: 0px;
 			}
 			.feature-card p{
-				width:50px;
-				
-				font-size: 5px;
+				width:75%;
+				font-size: 8px;
 			}
 		}
 	</style>
