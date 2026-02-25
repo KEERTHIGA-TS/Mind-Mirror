@@ -30,7 +30,10 @@ $stmt->close();
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Analytics</title>
+    <link rel="icon" type="image/jpeg" href="images/mindmirror-logo.png">
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body{
@@ -59,13 +62,21 @@ $stmt->close();
             width: 100%;
             
         }
+        a{
+            text-align:center; color: #4E3D42; text-decoration:none;
+        }
+        @media screen and (max-width: 426px){
+            a{
+                font-size: 15px;               
+            }
+        }
     </style>
 </head>
 <body>
 
-<h1>Mood Evolution Chart</h1>
+<h2>Mood Evolution Chart</h2>
 <canvas id="moodChart" height="500"></canvas>
-<a href="dashboard.php" style="text-align:center; color: #4E3D42; text-decoration:none;">← Back to Dashboard</a>
+<a href="dashboard.php" >← Back to Dashboard</a>
 
 <script>
     const timestamps = <?php echo json_encode($timestamps); ?>;
