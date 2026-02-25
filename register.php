@@ -20,6 +20,8 @@ else
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Mirror - Register</title>
+    <link rel="icon" type="image/jpeg" href="images/mindmirror-logo.png">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 	<style>
 		body{
@@ -111,12 +113,12 @@ else
 		}
 		@media screen and (max-width:426px) {
 			input{
-				width:130px;
+				width:160px;
 				height:10px;
 				border:none;
 				padding:10px;
 				border-radius: 5px;
-				font-size:9px;
+				font-size:12px;
 			}
 			input:focus{
 				outline:none;
@@ -128,16 +130,16 @@ else
 				border-radius:5px;
 			}
 			p{
-				font-size:8px;
+				font-size:11px;
 			}
 			h3{
-				font-size:13px;
+				font-size:16px;
 			}
 			.register{
 				display:inline-block;
 				text-align: center;
 				padding: 6px;
-				font-size: 11px;
+				font-size: 10px;
 				background-color: rgb(57, 57, 211);
 				color: aliceblue;
 				border:none;
@@ -145,9 +147,7 @@ else
 				text-decoration: none;
 				cursor: pointer;
 			}
-			div{
-				font-size: 10px;
-			}
+			
 		}
 		
 	</style>
@@ -163,7 +163,6 @@ else
 	</form>
 </body>
 </html>
-
 
 
 
