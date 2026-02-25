@@ -19,15 +19,17 @@ MindMirror is a personal journaling web application designed to support emotiona
 ### Dashboard
 ![Dashboard](screenshots/dashboard.png)
 
-### Mood Analytics
-![Mood Analytics](screenshots/analytics.png)
-
 ### Journaling
 ![Journaling](screenshots/journal.png)
 
 ### Mood Selection
 ![Mood Selection](screenshots/mood-selection.png)
 
+### Mood History
+![Mood Selection](screenshots/mood-history.png)
+
+### Mood Analytics
+![Mood Analytics](screenshots/analytics.png)
 
 ## 🚀 Live Demo
 🔗 https://phpdomain.infy.uk
