@@ -27,9 +27,10 @@ else{
     echo"<p>No results found!</p>";
 }
 //filter data
-$filter_mood=$_POST['filter_mood']??"";
-$from_date=$_POST['from_date']??"";
-$to_date=$_POST['to_date']??"";
+$filter_mood=$_GET['filter_mood']??"";
+$from_date=$_GET['from_date']??"";
+$to_date_raw=$_GET['to_date']??"";
+$to_date=$to_date_raw? $to_date_raw." 23:59:59":"";
 
 $sql="SELECT mood,note,entry_date FROM mood_log WHERE user_id=?";
 $params=[$user_id];
@@ -64,6 +65,7 @@ $result=$stmt->get_result();
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Timeline</title>
+    <link rel="icon" type="image/jpeg" href="images/mindmirror-logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <style>
         body{
@@ -217,36 +219,36 @@ $result=$stmt->get_result();
          }
         @media screen and (max-width:680px){
             h1{
-                font-size: 13px;
+                font-size: 15px;
             }
             h2{
                 font-size: 10px;
             }
             a,p,label{
-                font-size: 8px;
+                font-size: 10px;
             }
             .filter-box{
-                width: 230px;
+                width: 65%;
                 padding: 5px;
             }
             .filter-box label{
-                font-size: 6px;
+                font-size: 9px;
             }
             .mood{
-                font-size: 9px;
+                font-size: 11px;
                 font-weight: 900;
             }
             .note{
                 font-style:italic;
                 line-height: 11px;
-                font-size: 8px;
+                font-size: 10px;
             }
             .date{
-                font-size: 8px;
+                font-size: 9px;
             }
             select,input,button{
                 width: 50px;
-                font-size: 6px;
+                font-size: 9px;
                 padding: 1px;
                 height: 15px;
                 
@@ -278,7 +280,7 @@ $result=$stmt->get_result();
 </head>
 <body>
     <h1><?php echo htmlspecialchars(ucwords($username)); ?>'s Mood Timeline</h1>
-    <form method="post">
+    <form method="get">
         <div class="filter-box">
             <label for="filter_mood">Mood: </label>
             <select name="filter_mood">
@@ -292,7 +294,7 @@ $result=$stmt->get_result();
             <label for="from_date">From:</label>
             <input type="date" name="from_date" value="<?= htmlspecialchars($from_date) ?>">
             <label for="to_date">To:</label>
-            <input type="date" name="to_date" value="<?= htmlspecialchars($to_date) ?>">               
+            <input type="date" name="to_date" value="<?= htmlspecialchars($to_date_raw) ?>">               
 
             <button>Filter</button>
         </div>
