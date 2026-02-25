@@ -30,6 +30,8 @@ $is_first_time= ($last_date=="No entries yet." && $last_content=="Start your jou
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/jpeg" href="images/mindmirror-logo.png">
 
     <style>
         body{
@@ -43,12 +45,13 @@ $is_first_time= ($last_date=="No entries yet." && $last_content=="Start your jou
             background-color: #F7C1B2;
 			text-align:center;
 			padding:40px;
-			color:rgb(127, 127, 191);
+			color: rgb(106, 106, 187);
             align-items:center;
             justify-content:center;
             opacity:0;
             animation: fadeDown 1s ease-in-out forwards;
             box-shadow: 0px 2px 10px 2px rgba(158, 149, 149, 0.7);
+            position: relative;
 		}	
         @keyframes fadeDown{
             from{opacity: 0; transform:translateY(-20px);}
@@ -124,7 +127,10 @@ $is_first_time= ($last_date=="No entries yet." && $last_content=="Start your jou
             text-align: justify;
             margin-right: 50px;   
         }
-        
+        header a{
+            position: absolute;
+            right: 30px;
+        }
         @media screen and (max-width:768px) {
             img{
                 width:40px;
@@ -176,6 +182,9 @@ $is_first_time= ($last_date=="No entries yet." && $last_content=="Start your jou
             header{
                 padding: 15px;
             }
+            header a{
+                right: 10px;
+            }
             .container{
                 padding: 30px;
             }
@@ -184,31 +193,34 @@ $is_first_time= ($last_date=="No entries yet." && $last_content=="Start your jou
                 padding: 15px;
             }
             p{
-                font-size: 8px;
+                font-size: 9px;
             }
             .card{
                 border-radius: 20px;
             }
             .card p{
                 
-                font-size: 8px;
+                font-size: 9px;
             }
             h2{
                 font-size:12px;
             }
             a{
-                font-size:10px;
+                font-size:9px;
+                padding: 5px;
+                border-radius: 4px;
+                margin-top: 5px;
             }
             h1{
                 font-size:14px;
             }
             .quote{
                 
-                font-size: 8px;
+                font-size: 10px;
                 padding:15px;
             }
             .content{
-                line-height: 14px;    
+                line-height: 12px;    
             }
             
         }
@@ -230,6 +242,7 @@ $is_first_time= ($last_date=="No entries yet." && $last_content=="Start your jou
             ?>
         </div>
         <img src="./images/mirror.jpg">
+        <a href="logout.php"> Logout </a>
 	</header>
 	<div class="container">
         <div class="card">
