@@ -16,6 +16,12 @@ MindMirror is a personal journaling web application designed to support emotiona
 
 ## 📸 Screenshots
 
+### Home
+![Dashboard](screenshots/home.png)
+
+### Register/Login
+![Dashboard](screenshots/register.png)
+
 ### Dashboard
 ![Dashboard](screenshots/dashboard.png)
 
